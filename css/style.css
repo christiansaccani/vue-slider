@@ -30,6 +30,9 @@
     bottom: 20px;
     text-align: right;
     color: white;
+    background-color: #00000080;
+
+    padding: 1em;
 }
 
 .thumbs {

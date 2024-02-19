@@ -22,9 +22,14 @@
                     <img v-for="(currentEl, index) in slides" 
                     :src='currentEl.image' 
                     :alt="'Locandina ' + (index + 1)" 
-                    v-show="index == activeSlideIndex">
+                    v-show="index == activeSlideIndex"
+                    @mouseover="pauseTimer" 
+                    @mouseleave="startTimer">
 
-                    <div v-for="(currentEl, index) in slides" v-show="index == activeSlideIndex" class="text">
+                    <div v-for="(currentEl, index) in slides" 
+                    v-show="index == activeSlideIndex" 
+                    class="text">
+
                         <h3>
                             {{currentEl.title}}
                         </h3>

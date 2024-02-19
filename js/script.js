@@ -34,6 +34,7 @@ createApp({
 
         }
     },
+
     methods: {
         nextSlide() {
             this.activeSlideIndex++;
@@ -52,11 +53,22 @@ createApp({
         selectedSlide(index) {
             this.activeSlideIndex = index;
         },
+        pauseTimer() {
+            // Congela il timer quando passi il mouse sull'elemento
+            clearInterval(this.timer);
+        },
+        startTimer() {
+            this.timer = setInterval(() => {
+                this.nextSlide();
+            }, 3000);
+          },
     },
+
     mounted() {  //le funzioni scritte all'interno di mounted vengono eseguite una volta costruito il DOM
         // Imposta un intervallo per chiamare il metodo ogni tre secondi
         this.timer = setInterval(() => {
             this.nextSlide();
         }, 3000);
     },
+
 }).mount('#app');
