@@ -29,8 +29,8 @@ createApp({
             ],
 
             // mi salvo una variabile dove memorizzo quale sia la slide attiva
-            activeSlideIndex: 1,
-
+            activeSlideIndex: 0,
+            timer: 0,
 
         }
     },
@@ -51,6 +51,12 @@ createApp({
         },
         selectedSlide(index) {
             this.activeSlideIndex = index;
-        }
-    }
+        },
+    },
+    mounted() {  //le funzioni scritte all'interno di mounted vengono eseguite una volta costruito il DOM
+        // Imposta un intervallo per chiamare il metodo ogni tre secondi
+        this.timer = setInterval(() => {
+            this.nextSlide();
+        }, 3000);
+    },
 }).mount('#app');
