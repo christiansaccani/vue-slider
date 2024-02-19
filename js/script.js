@@ -29,7 +29,7 @@ createApp({
             ],
 
             // mi salvo una variabile dove memorizzo quale sia la slide attiva
-            activeSlideIndex: 0,
+            activeSlideIndex: 1,
 
 
         }
