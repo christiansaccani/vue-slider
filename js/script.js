@@ -64,7 +64,7 @@ createApp({
 
     mounted() {  //le funzioni scritte all'interno di mounted vengono eseguite una volta costruito il DOM
         // Imposta un intervallo per chiamare il metodo ogni tre secondi
-        this.timer = setInterval(this.nextSlide, 3000);
+        this.startTimer()
     },
 
 }).mount('#app');
